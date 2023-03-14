@@ -17,16 +17,21 @@ mot_joueur = []
 
 #le joueur joue
 def jouer():
+    #mot du joueur
+    mot_joueur = []
+    #nombre d'essai
+    nb_de_chance = 7
     mot=generation_mot()
     while nb_de_chance!=0 :
         lettre = input("Ecrivez une lettre")
         if lettre in mot:
             if lettre not in mot_joueur:
                 mot_joueur.append(lettre)
+    #modifier l'affichage (enlever les astérix)
             elif lettre in mot_joueur:
                 print("vous avez déjà entrez cette lettre")
-    #modifier l'affichage (enlever les astérix)
-            continue
+                break
+            pass
         elif lettre not in mot:
             nb_de_chance -=1
     
